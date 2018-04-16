@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Demo</title>
+</head>
+<body>
+
+<!-- <script src="js/knear-client.js"></script>
+<script src="js/meyda.min.js"></script>
+<script src="js/MicrophoneInput.js"></script>
+<script src="js/AudioClass.js"></script>
+<script src="js/AudioClassifier.js"></script> -->
+<script src="AudioClassifier.min.js"></script>
+
+<script>
+
+	function callback(event) {
+		console.log(event.detail.prediction);
+	}
+
+	function init() {
+		var audioClassifier = new AudioClassifier({
+			topK: 5
+		})
+
+		window.addEventListener('classification', callback);
+	}
+
+	window.addEventListener('load', init);
+</script>
+</body>
+</html>
